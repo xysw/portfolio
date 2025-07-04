@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Doris Wei</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/png" href="images/star.png">
+		<link rel="icon" type="image/png" href="images/star.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">DW</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home Page</a></li>
+							<li><a href="about.html">About Me</a></li>
+							<li class="active"><a href="projects.html">Projects</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/doris-wei-33738b313/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/xysw" class="icon brands fa-github"><span class="label" target="_blank">GitHub</span></a></li>
+							<li><a href="mailto:doris.xy.wei@gmail.com" class="icon far fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">December, 2024</span>
+									<h1>Kaggle<br />
+									Titanic Problem</h1>
+									<div class="image main"><img src="images/kaggle1.png" alt=""/></div>
+								</header>
+								<div class="middle">
+								<ul>
+									<li><a href="https://github.com/xysw/kag-titanic" target="_blank">Full Jupyter Notebook in GitHub</a></li>
+									<li><a href="https://www.kaggle.com/competitions/titanic" target="_blank">The Titanic Problem</a></li>
+								</ul>
+								</div>
+								<h3>Task</h3>
+								<p><i>On April 15, 1912, the RMS Titanic sank after colliding with an iceberg,
+									resulting in the death of 1502 out of 2224 passengers and crew.
+								</i></p>
+								<p>The aim of this challenge is to build a model that predicts whether a passenger on the Titanic 
+									in the test dataset survived or not based on passenger data (ie name, age, gender, socio-economic class, etc).
+									A training dataset is provided.</p>
+								
+								<h3>Process</h3>
+								<p>Upon exploring the dataset, it was observed that the "age" feature had around 21-22% missing values,
+									"cabin" had around 80% missing values,
+									and "embarked" and "fare" had a few missing values.
+								<p>It was decided to:</p>
+								<ul>
+									<li>fill in the age data with the median age for that passenger's sex and class</li>
+									<li>fill in the embarked data with research (as missing values were few)</li>
+									<li>fill in the fare data with the median fare for that passenger's class and family size</li>
+									<li>categorise the missing cabin data as "Missing"</li>
+								</ul>
+								<p>Feature Engineering:</p>
+								<ul>
+									<li>continuous features were binned</li>
+									<li>the family size feature was created by adding the sibling/spouse and parent/child feature values</li>
+									<li>the ticket number feature was frequency encoded</li>
+									<li>titles were extracted from the name feature and grouped into 5 categories</li>
+									<li>label encoded non-numerical features and one hot encoded categorical features</li>
+									<li>scaled the training and test data sets with the Standard Scaler in scikitlearn</li>
+								</ul>
+								<p>Model:</p>
+								<ul>
+									<li>the XGBoost model was chosen as it is known to perform well for this task</li>
+									<li>hyperparameters were tuned with Bayesian Optimisation using the HyperOpt library</li>
+									<li>the highest accuracy achieved was 0.79</li>
+								</ul>
+
+								<h3>Conclusion</h3>
+								<p>I learned a lot about data preprocessing and manipulation, feature engineering and feature selection,
+									 and hyperparameter tuning. I also tried out GridSearchCV for hyperparameter tuning, but 
+									Bayesian Optimisation seemed to perform better. </p>
+									 
+								<p>There is definitely heaps more to learn and lots of room for improvement! 
+									Feel free to send me any comments or questions you have about the process or the code
+									in the Jupyter Notebook on LinkedIn - I am extremely grateful for any feedback.</p>
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!--
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						-->
+
+						<section class="split contact">
+							<section class="alt">
+								<h3>Email</h3>
+								<p>doris.xy.wei@gmail.com</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/doris-wei-33738b313/" class="icon brands alt fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/xysw" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<!--
+							<section>
+								<h3>Address</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							-->
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>Base Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
