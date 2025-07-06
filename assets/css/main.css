@@ -2237,6 +2237,28 @@ input, select, textarea {
 				background-color: #18bfef;
 			}
 
+		input[type="submit"].skills,
+		input[type="reset"].skills,
+		input[type="button"].skills,
+		button.skills,
+		.button.skills {
+			font-size: 0.7rem;
+			height: 2.5rem;
+			line-height: 2.5rem;
+			padding: 0 1rem;
+			border-radius: 8px;
+			background-color: #254667;
+			box-shadow: none;
+			color: #ffffff !important;
+		}
+			input[type="submit"].skills:hover,
+			input[type="reset"].skills:hover,
+			input[type="button"].skills:hover,
+			button.skills:hover,
+			.button.skills:hover {
+				background-color: #18bfef;
+			}
+
 /* Form */
 
 	form {
@@ -4404,7 +4426,6 @@ input, select, textarea {
 		}
 
 	#copyright {
-		color: #ffffff;
 		position: relative;
 		color: rgba(255, 255, 255, 0.25);
 		cursor: default;
@@ -4434,6 +4455,7 @@ input, select, textarea {
 				border-bottom-color: transparent;
 				transition: none;
 				-webkit-transition: none;
+				color: #b3b7bb !important;
 			}
 
 		#copyright strong, #copyright b {
@@ -4727,4 +4749,14 @@ input, select, textarea {
 	
 	.gallery {
 		padding-top: 1rem;
+	}
+
+	.skills-box {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		padding-bottom: 2rem;
 	}
